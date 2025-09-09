@@ -8,7 +8,7 @@
 </head>
 <body>
 <div class="wrap">
-    <h1>Калькулятор веса алюминия</h1>
+    <h1>Калькулятор веса металла</h1>
     <p class="lead">Сортамент: круг / пруток и труба круглая</p>
 
     <div class="card">
@@ -21,19 +21,27 @@
         <!-- Общие настройки -->
         <div class="row">
             <div class="col">
-                <label>Марка алюминия</label>
+                <label>Материал</label>
                 <select id="alloy">
-                    <option value="2710">А5 — 2.71 г/см³</option>
-                    <option value="2710">АД — 2.71 г/см³</option>
-                    <option value="2710">АД1 — 2.71 г/см³</option>
-                    <option value="2770">АК4 — 2.77 г/см³</option>
-                    <option value="2750">АК6 — 2.75 г/см³</option>
-                    <option value="2670">АМг — 2.67 г/см³</option>
-                    <option value="2730">АМц — 2.73 г/см³</option>
-                    <option value="2850">В95 — 2.85 г/см³</option>
-                    <option value="2800">Д1 — 2.80 г/см³</option>
-                    <option value="2780" selected>Д16 — 2.78 г/см³</option>
-                    <option value="2750">Прочее — 2.75 г/см³</option>
+                    <!-- Алюминий -->
+                    <optgroup label="Алюминий">
+                        <option value="2710">А5 — 2.71 г/см³</option>
+                        <option value="2710">АД — 2.71 г/см³</option>
+                        <option value="2710">АД1 — 2.71 г/см³</option>
+                        <option value="2770">АК4 — 2.77 г/см³</option>
+                        <option value="2750">АК6 — 2.75 г/см³</option>
+                        <option value="2670">АМг — 2.67 г/см³</option>
+                        <option value="2730">АМц — 2.73 г/см³</option>
+                        <option value="2850">В95 — 2.85 г/см³</option>
+                        <option value="2800">Д1 — 2.80 г/см³</option>
+                        <option value="2780" selected>Д16 — 2.78 г/см³</option>
+                        <option value="2750">Прочее — 2.75 г/см³</option>
+                    </optgroup>
+
+                    <!-- Сталь -->
+                    <optgroup label="Сталь">
+                        <option value="7850">Ст45 — 7.85 г/см³</option>
+                    </optgroup>
                 </select>
             </div>
 
@@ -48,6 +56,7 @@
 
         <!-- Solid round -->
         <div id="form-solid">
+            <img src="Circle.png" alt="Круг / пруток" style="max-width:220px; margin-bottom:10px;">
             <div class="row">
                 <div class="col">
                     <label>Диаметр D (мм)</label>
@@ -66,6 +75,7 @@
 
         <!-- Tube -->
         <div id="form-tube" style="display:none">
+            <img src="PipeCircle.png" alt="Труба круглая" style="max-width:220px; margin-bottom:10px;">
             <div class="row">
                 <div class="col">
                     <label>Наружный диаметр Dₒ (мм)</label>
