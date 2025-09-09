@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Калькулятор веса алюминия</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+    <h1>Калькулятор веса алюминия</h1>
+    <p class="lead">Сортамент: круг / пруток и труба круглая</p>
+
+    <div class="card">
+        <!-- Tabs -->
+        <div class="tabs">
+            <div class="tab active" data-shape="solid">Круг / пруток</div>
+            <div class="tab" data-shape="tube">Труба круглая</div>
+        </div>
+
+        <!-- Общие настройки -->
+        <div class="row">
+            <div class="col">
+                <label>Марка алюминия</label>
+                <select id="alloy">
+                    <option value="2710">А5 — 2.71 г/см³</option>
+                    <option value="2710">АД — 2.71 г/см³</option>
+                    <option value="2710">АД1 — 2.71 г/см³</option>
+                    <option value="2770">АК4 — 2.77 г/см³</option>
+                    <option value="2750">АК6 — 2.75 г/см³</option>
+                    <option value="2670">АМг — 2.67 г/см³</option>
+                    <option value="2730">АМц — 2.73 г/см³</option>
+                    <option value="2850">В95 — 2.85 г/см³</option>
+                    <option value="2800">Д1 — 2.80 г/см³</option>
+                    <option value="2780" selected>Д16 — 2.78 г/см³</option>
+                    <option value="2750">Прочее — 2.75 г/см³</option>
+                </select>
+            </div>
+
+            <div class="col">
+                <label>Режим расчёта</label>
+                <select id="mode">
+                    <option value="weight">Рассчитать вес</option>
+                    <option value="length">Рассчитать длину по весу</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Solid round -->
+        <div id="form-solid">
+            <div class="row">
+                <div class="col">
+                    <label>Диаметр D (мм)</label>
+                    <input type="number" id="solid-d" value="20">
+                </div>
+                <div class="col" id="solid-length-input">
+                    <label>Длина L (м)</label>
+                    <input type="number" id="solid-l" value="2">
+                </div>
+                <div class="col" id="solid-weight-input" style="display:none">
+                    <label>Вес (кг)</label>
+                    <input type="number" id="solid-w">
+                </div>
+            </div>
+        </div>
+
+        <!-- Tube -->
+        <div id="form-tube" style="display:none">
+            <div class="row">
+                <div class="col">
+                    <label>Наружный диаметр Dₒ (мм)</label>
+                    <input type="number" id="tube-do" value="60">
+                </div>
+                <div class="col">
+                    <label>Внутренний диаметр Dᵢ (мм)</label>
+                    <input type="number" id="tube-di" value="50">
+                </div>
+                <div class="col" id="tube-length-input">
+                    <label>Длина L (м)</label>
+                    <input type="number" id="tube-l" value="3">
+                </div>
+                <div class="col" id="tube-weight-input" style="display:none">
+                    <label>Вес (кг)</label>
+                    <input type="number" id="tube-w">
+                </div>
+            </div>
+        </div>
+
+        <!-- Кнопки -->
+        <div class="actions">
+            <button id="calc">Рассчитать</button>
+            <button id="reset" class="secondary">Сброс</button>
+        </div>
+
+        <!-- Результат -->
+        <div class="result" id="resultBox" style="display:none">
+            <div id="resultText"></div>
+            <div class="note">
+                Формулы: масса = объём × плотность;
+                объём круга = π·(D/2)²·L;
+                объём трубы = π·(Dₒ²–Dᵢ²)/4 · L.
+            </div>
+        </div>
+    </div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
